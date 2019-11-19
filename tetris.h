@@ -13,7 +13,7 @@
 
 //Configuração das dimensões da matriz principal do jogo
 #define COLUMNS 30
-#define ROWS 60
+#define ROWS 30
 
 //Configuração de teclas
 #define ESC 27

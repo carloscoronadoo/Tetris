@@ -21,6 +21,8 @@ int main(){
     char matrix[ROWS][COLUMNS];
     Bloco tijolo;
     int keypressed=0;
+    int cont=0;
+    int velocidade=2;
 
     //apagar o cursor da tela
     ShowConsoleCursor(0);
@@ -52,7 +54,9 @@ int main(){
             drawBar(matrix, tijolo, EMPTY);
             
             //faço a posição da @ ir para a direita
-            if(tijolo.i < (ROWS-1)) tijolo.i++;
+            if(cont%velocidade==0){
+                if(tijolo.i < (ROWS-1)) tijolo.i++;
+            }
 
         }else{
             initBar(&tijolo);
@@ -81,8 +85,15 @@ int main(){
             case TECLA_ESPACO:
                 rotate(&tijolo);
             break;
+            case 'v':
+                if(velocidade==2){
+                    velocidade = 1;
+                }else{
+                    velocidade = 2;
+                }
         }
 
+        cont++;
     }
 
     system("pause");
